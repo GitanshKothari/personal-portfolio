@@ -1,5 +1,5 @@
 // Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
+  document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
@@ -38,21 +38,32 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
   
 
-  const projectsContainer = document.querySelector(".projects-container");
-
-// Function to adjust the carousel position based on mouse position
-    function handleMouseMove(event) {
-    const carouselWidth = projectsContainer.offsetWidth;
-    const mouseX = event.clientX - projectsContainer.getBoundingClientRect().left;
-    const percent = (mouseX / carouselWidth - 0.5) * 2;
-    const translateX = -200 * percent; // Adjust this value to control the visible area
-    projectsContainer.style.transform = `translateX(${translateX}px)`;
+  function createMLVisualization() {
+    const mlCanvas = document.getElementById("mlCanvas");
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, mlCanvas.clientWidth / mlCanvas.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(mlCanvas.clientWidth, mlCanvas.clientHeight);
+    mlCanvas.appendChild(renderer.domElement);
+  
+    // Create a simple 3D neural network representation
+    const geometry = new THREE.BoxGeometry(10, 10, 10);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const neuralNetwork = new THREE.Mesh(geometry, material);
+    scene.add(neuralNetwork);
+  
+    camera.position.z = 5;
+  
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+      neuralNetwork.rotation.x += 0.01;
+      neuralNetwork.rotation.y += 0.01;
+      renderer.render(scene, camera);
     }
-
-    // Attach the mousemove event listener to the projects container
-    projectsContainer.addEventListener("mousemove", handleMouseMove);
-
-    // Reset the carousel position when the mouse leaves the container
-    projectsContainer.addEventListener("mouseleave", () => {
-    projectsContainer.style.transform = "translateX(0)"; // Reset the carousel position to the initial state
-    });
+  
+    animate();
+  }
+  
+  // Call the function to create the 3D machine learning visualization
+  createMLVisualization();

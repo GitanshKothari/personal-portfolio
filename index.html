@@ -3,6 +3,7 @@
 <head>
   <title>Gitansh Kothari - Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
   <header>
@@ -62,28 +63,98 @@
   </section>
 
   <section id="projects">
-    <h2>Personal Projects</h2>
-    <div class = projects-container>
-      <div class="project">
-        <img src="project1.jpg" alt="Project 1">
-        <h3>Reinforcement Learning for ViZDoom</h3>
-        <p>Developed and implemented various reinforcement learning algorithms (PPO, DQN, A2C, etc.) and evaluated their performance on distinct VizDoom game scenarios. Automated reward shaping process to optimize the weights of distinct game variables involved. Built custom neural network architectures to train an agent to recognize in-game enemies.</p>
-        <a href="#" class="btn">View Project</a>
-      </div>
-      <div class="project">
-        <img src="project2.jpg" alt="Project 2">
-        <h3>UniMaps</h3>
-        <p>Developed a feature-rich GIS application with location-finding, bookmarking, autocompletion, route-planning, and more using C++ and Glade. Implemented Dijkstra path-finding algorithm and utilized advanced data structures like Trie and HashMap. Programmed an efficient solution to the Single Vehicle Pickup and Delivery problem using greedy and 2-opt algorithms.</p>
-        <a href="#" class="btn">View Project</a>
-      </div>
-      <div class="project">
-        <img src="project3.jpg" alt="Project 3">
-        <h3>Object Detection and Segmentation</h3>
-        <p>Implemented vehicle detection, traffic sign detection, and lane segmentation models for images/videos using Python and OpenCV. Performed data preprocessing, training, and testing to achieve accurate results.</p>
-        <a href="#" class="btn">View Project</a>
+    <div class="container">
+
+
+      <input type="radio" name="slider" class="d-none" id="s1" checked>
+      <input type="radio" name="slider" class="d-none" id="s2">
+      <input type="radio" name="slider" class="d-none" id="s3">
+  
+      <div class="cards">
+        <label for="s1" id="slide1">
+          <div class="card">
+            <div class="image">
+              <img src="project1.jpg" alt="Project 1">
+              <div class="dots">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div class="infos">
+              <span class="name">Reinforcement Learning for ViZDoom</span>
+              <span class="lorem">Developed and implemented various reinforcement learning algorithms (PPO, DQN, A2C, etc.) and evaluated their performance on distinct VizDoom game scenarios. Automated reward shaping process to optimize the weights of distinct game variables involved. Built custom neural network architectures to train an agent to recognize in-game enemies.</span>
+                lorem. Nulla eu
+                sodales</span>
+            </div>
+            <a href="/contact" class="btn-contact">details</a>
+            <div class="socials">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-bookmark"></i>
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+          </div>
+        </label>
+  
+        <label for="s2" id="slide2">
+          <div class="card">
+            <div class="image">
+              <img src="project2.jpg" alt="Project 1">
+              <div class="dots">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+                <div class="dot3"></div>
+              </div>
+            </div>
+            <div class="infos">
+              <span class="name">UniMaps</span>
+              <span class="lorem">Developed a feature-rich GIS application with location-finding, bookmarking, autocompletion, route-planning, and more using C++ and Glade. Implemented Dijkstra path-finding algorithm and utilized advanced data structures like Trie and HashMap. Programmed an efficient solution to the Single Vehicle Pickup and Delivery problem using greedy and 2-opt algorithms.</span>
+                lorem. Nulla eu
+                sodales karma stellus</span>
+            </div>
+            <a href="/contact" class="btn-contact">details</a>
+            <div class="socials">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-bookmark"></i>
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+          </div>
+        </label>
+  
+        <label for="s3" id="slide3">
+          <div class="card">
+            <div class="image">
+              <img src="project3.jpg" alt="Project 1">
+              <div class="dots">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+                <div class="dot3"></div>
+              </div>
+            </div>
+            <div class="infos">
+              <span class="name">Object Detection</span>
+              <span class="lorem">Implemented vehicle detection, traffic sign detection, and lane segmentation models for images/videos using Python and OpenCV. Performed data preprocessing, training, and testing to achieve accurate results.</span>
+                lorem. Nulla karma stellus</span>
+            </div>
+            <a href="/contact" class="btn-contact">details</a>
+            <div class="socials">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-bookmark"></i>
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+          </div>
+        </label>
       </div>
     </div>
 
+  </section>
+
+  <section id="mlVisualization">
+    <h2>Machine Learning Visualization</h2>
+    <div id="mlCanvas"></div>
   </section>
 
   <section id="contact">
@@ -101,6 +172,7 @@
   <button id="scrollToTopBtn">Scroll to Top</button>
 
   <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
