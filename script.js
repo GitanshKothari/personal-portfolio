@@ -31,7 +31,7 @@
   });
   window.addEventListener('scroll', () => {
     if (window.scrollY >= 300) {
-      scrollToTopBtn.style.display = 'block';
+      scrollToTopBtn.style.display = 'flex';
     } else {
       scrollToTopBtn.style.display = 'none';
     }

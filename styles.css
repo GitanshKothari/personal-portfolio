@@ -263,7 +263,6 @@ input {
 #mlCanvas{
   height: 200px;
   background-color: #333;
-
 }
 
 /* Footer styles */
@@ -279,12 +278,12 @@ footer p {
 }
 
 /* Scroll to top button styles */
-#scrollToTopBtn {
+/* #scrollToTopBtn {
   display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #d35400; /* Dark Gray (Button background) */
+  background-color: #d35400; 
   color: #fff;
   font-size: 16px;
   padding: 10px 15px;
@@ -294,7 +293,80 @@ footer p {
 }
 
 #scrollToTopBtn:hover {
-  background-color: #e67e22; /* Slightly darker shade of Dark Gray */
+  background-color: #e67e22; 
+} */
+
+.scrollToTopBtn-background{
+  background-color: #2c2c2c;
+  /* height: 100vh; */
+  position:fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 20px;
+  width: 100px;
+  padding: 10px 20px;
+}
+
+
+#scrollToTopBtn{
+  position:fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  color: #fff;
+  background-color: #2c2c2c;
+  cursor:pointer;
+  font-size:16px;
+  line-height:16px;
+  max-width:160px;
+  width:100%;
+  letter-spacing:2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  transition: all 1s ease-in;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  
+}
+
+#scrollToTopBtn:hover{
+  color: #ff9950;
+  
+}
+
+.type1::after, .type1::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+}
+.type1::after{
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #ff9950;
+  border-right-color: #ff9950;
+}
+
+.type1::before{
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #ff9950;
+  border-left-color: #ff9950;
+}
+
+.type1:hover:after, .type1:hover:before{
+  width: 100%;
+  height: 100%;
 }
 
 
